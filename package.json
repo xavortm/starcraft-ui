@@ -1,0 +1,56 @@
+{
+  "name": "dxstarter",
+  "version": "1.5.0",
+  "description": "Quick settings for developing themes.",
+  "main": "Gulpfile.js",
+  "repository": "https://github.com/DevriX/DX-Starter",
+  "sasslintConfig": ".sass-lint.yml",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-preset-env": "^1.7.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-livereload": "^4.0.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "moment": "^2.23.0",
+    "replace-in-file": "^3.4.2",
+    "sass-lint": "^1.12.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "./node_modules/.bin/gulp",
+    "ziptheme": "bash zip.sh",
+    "ver": "node assets-version.js",
+    "hello": "echo \"Hello\" ",
+    "projectConf": "sudo npm i -g gulp-cli gulp && echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
+  },
+  "author": "DevriX",
+  "license": "ISC",
+  "keywords": [],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "browsersync": "0.0.1-security",
+    "gulp-filter": "^5.1.0",
+    "npm": "^6.5.0"
+  }
+}

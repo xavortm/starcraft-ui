@@ -1,0 +1,14 @@
+html,
+body,
+.game-window {
+    height: 100%;
+    width: 100%;
+}
+
+// The big wrapper and background settings. 
+// Responsive styles go here as well.
+.game-window {
+    // Temporary wallpaper:
+    background: url('../images/668672.jpg') center center;
+    background-size: cover;
+}

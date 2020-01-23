@@ -1,0 +1,77 @@
+// Allowing to run foundation.js file
+meta.foundation-data-attribute-namespace { font-family: false; }
+
+// Importing basic HTML element stylings. See it like reset + small stylings
+@import "general-basic";
+
+html {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// Add margin-top to body tag when admin-bar is visible.
+body.admin-bar {
+	padding-top: 32px;
+	@media (max-width: 782px) { padding-top: 46px; }
+}
+
+body {
+	font-family: $font-sans;
+	font-size: $global-font-size;
+	line-height: 1.7;
+	background: white;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.2;
+	font-family: $font-heading;
+
+	// Removes the default margins from the headings.
+	// Add this customly for entry content if needed.
+	margin: 0;
+}
+
+blockquote {
+	font-style: italic;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object {
+	max-width: 100%;
+}

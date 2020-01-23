@@ -1,0 +1,31 @@
+:root {
+    --color-text-light: #b1e1e6;
+    --color-text-disabled: #434e5a;
+}
+
+
+// Global settings
+$global-layout-gutter: 20px;
+$global-font-size: 16px;
+$global-width: 1200px;
+
+
+// Standart set media queries
+$breakpoint-mobile: 480px;
+$breakpoint-small: 	640px;
+$breakpoint-medium: 960px;
+$breakpoint-large: 	1200px;
+
+
+// Layout
+$layout-header-height: 70px;
+
+
+// Colors
+$color-glow-main: #194fac;
+
+
+// Fonts
+$font-serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+$font-sans: 'Eurostile';
+$font-heading: $font-sans;
