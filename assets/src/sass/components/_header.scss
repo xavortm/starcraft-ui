@@ -1,20 +1,4 @@
 .game-header {
-    &-primary {
-        --gradient-opacity: .95;
-
-        // Dem funcs... dat length...
-        background: linear-gradient(rgba(#090f16, var(--gradient-opacity)), rgba(#121d2b, var(--gradient-opacity)));
-        border-bottom: 1px solid #1d2b35;
-        border-top: 1px solid #02040f;
-        box-shadow: 0 1px 0 0 #02040f, inset 0 1px 0 0 #12181f;
-        backdrop-filter: blur(3px);
-    }
-
-    &-secondary {
-        background: rgba(#080c14, .95);
-        backdrop-filter: blur(3px);
-    }
-
     .nav-menu {
         display: flex;
 
@@ -52,7 +36,7 @@
 
             a {
                 color: var(--color-text-light);
-                padding: .75em 1.5em;
+                padding: .75em 1.4em;
                 display: inline-block;
             }
         }
@@ -112,6 +96,226 @@
                 filter: blur(25px);
                 transform: translateY(50px);
             }
+        }
+    }
+
+    &-primary {
+        --gradient-opacity: .95;
+
+        // Dem funcs... dat length...
+        background: linear-gradient(rgba(#090f16, var(--gradient-opacity)), rgba(#121d2b, var(--gradient-opacity)));
+        border-bottom: 1px solid #1d2b35;
+        border-top: 1px solid #02040f;
+        box-shadow: 0 2px 1px 0 #02040f, inset 0 1px 0 0 #12181f;
+        backdrop-filter: blur(3px);
+        padding-left: 5.625em;
+        display: flex;
+        position: relative;
+        z-index: 2;
+
+        .nav-menu {
+            flex: 1 1 100%;
+
+            .menu-item {
+                &:first-child {
+                    border-left: 1px solid #1d2b35;
+                }
+            }
+        }
+    }
+
+    &-secondary {
+        padding-left: 6.5em;
+        background: rgba(#080c14, .95);
+        backdrop-filter: blur(3px);
+        border-bottom: 1px solid #192937;
+        box-shadow: 0 2px 1px 0 black;
+
+        .nav-menu {
+            --menu-item-padding-top: .75em;
+            
+            .menu-item {
+                font-size: 90%;
+                margin-top: var(--menu-item-padding-top);
+                margin-bottom: var(--menu-item-padding-top);
+                
+                &.is-current,
+                &:hover {
+                    box-shadow: none;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                a {
+                    color: var(--color-text-disabled-secondary);
+                    padding: 0 1.4em;
+                }
+            }
+
+            .menu-item-current-bounds {
+                height: calc(100% + 1.5em);
+                top: calc(-1 * var(--menu-item-padding-top));
+            }
+        }
+    }
+
+    .game-add-friend {
+        border-left: 1px solid #1d2b35;
+        border-right: 1px solid #1d2b35;
+        padding: 0 .8em;
+        display: flex;
+        align-items: center;
+        margin-right: 6.5em;
+
+        .icon-plus {
+            transform: translateY(-3px);
+            width: 12px;
+            height: 3px;
+            background: #557793;
+            display: inline-block;
+            position: relative;
+
+            // Vertical
+            &:after {
+                content: '';
+                display: inline-block;
+                height: 13px;
+                width: 4px;
+                top: -5px;
+                left: 4px;
+                background: linear-gradient(lighten(#557793, 10%), darken(#557793, 5%));
+                position: absolute;
+            }
+        }
+    }
+
+    .profile-picture {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        height: 4em;
+        width: 4em;
+
+        &-shadow {
+            $clip-small: 10%;
+            $clip-large: #{100% - $clip-small};
+
+            position: absolute;
+            top: -7px;
+            left: -6px;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+            background: #000;
+            clip-path: polygon($clip-small 0%, $clip-large 0%, 100% $clip-small, 100% $clip-large, $clip-large 100%, $clip-small 100%, 0% $clip-large, 0% $clip-small);
+        }
+
+        &-background {
+            $clip-small: 9%;
+            $clip-large: #{100% - $clip-small};
+
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+            background: #09274a;
+            clip-path: polygon($clip-small 0%, $clip-large 0%, 100% $clip-small, 100% $clip-large, $clip-large 100%, $clip-small 100%, 0% $clip-large, 0% $clip-small);
+        }
+
+        &-inner-shadow {
+            $clip-small: 6%;
+            $clip-large: #{100% - $clip-small};
+
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            background: #000;
+            clip-path: polygon($clip-small 0%, $clip-large 0%, 100% $clip-small, 100% $clip-large, $clip-large 100%, $clip-small 100%, 0% $clip-large, 0% $clip-small);
+        }
+
+        &-inner-glow {
+            $clip-small: 7%;
+            $clip-large: #{100% - $clip-small};
+
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: #278fe5;
+            clip-path: polygon($clip-small 0%, $clip-large 0%, 100% $clip-small, 100% $clip-large, $clip-large 100%, $clip-small 100%, 0% $clip-large, 0% $clip-small);
+        }
+
+        %bar-shape {
+            height: 3px;
+            width: 60%;
+            background: black;
+            // No need for variables here, this is duplicated a few times.
+            clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+            position: absolute;
+
+            &:after {
+                content: '';
+                display: block;
+                width: calc(100% - 1.5px);
+                height: calc(100% - .5px);
+                background: #236aa0;
+                top: .5px;
+                left: .5px;
+                position: absolute;
+                clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+            }
+        }
+
+        .profile-picture-bar-left {
+            @extend %bar-shape;
+
+            left: -5px;
+            top: 25%;
+            width: 50%;
+            transform: rotate(90deg);
+            transform-origin: left;
+        }
+
+        .profile-picture-bar-right {
+            @extend %bar-shape;
+
+            right: -5px;
+            top: 25%;
+            width: 50%;
+            transform: rotate(-90deg);
+            transform-origin: right;
+        }
+        
+        .profile-picture-bar-down {
+            @extend %bar-shape;
+
+            left: 20%;
+            bottom: -6px;
+            width: 60%;
+        }
+
+        .profile-picture-bar-top {
+            @extend %bar-shape;
+
+            left: 20%;
+            top: -6px;
+            width: 60%;
+            transform: rotate(180deg);
+        }
+
+        img {
+            $clip-small: 5%;
+            $clip-large: #{100% - $clip-small};
+            object-fit: cover;
+        
+            clip-path: polygon($clip-small 0%, $clip-large 0%, 100% $clip-small, 100% $clip-large, $clip-large 100%, $clip-small 100%, 0% $clip-large, 0% $clip-small);
+            position: relative;
+            z-index: 10;
         }
     }
 }
