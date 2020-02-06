@@ -125,7 +125,7 @@
     }
 
     &-secondary {
-        padding-left: 6.5em;
+        padding-left: 5.9em;
         background: rgba(#080c14, .95);
         backdrop-filter: blur(3px);
         border-bottom: 1px solid #192937;
@@ -303,7 +303,7 @@
             @extend %bar-shape;
 
             left: 20%;
-            top: -6px;
+            top: -6px;  
             width: 60%;
             transform: rotate(180deg);
         }

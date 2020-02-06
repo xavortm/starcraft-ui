@@ -431,6 +431,9 @@ body,
   background: url("../images/668672.jpg") center center;
   background-size: cover; }
 
+.game-main {
+  padding: 2em 7.2em; }
+
 .game-header .nav-menu {
   display: -webkit-box;
   display: flex;
@@ -528,7 +531,7 @@ body,
       border-left: 1px solid #1d2b35; }
 
 .game-header-secondary {
-  padding-left: 6.5em;
+  padding-left: 5.9em;
   background: rgba(8, 12, 20, 0.95);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
@@ -672,5 +675,13 @@ body,
             clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
     position: relative;
     z-index: 10; }
+
+.screen-title {
+  color: white;
+  text-transform: uppercase;
+  font-family: eurostile-extended;
+  font-weight: 500;
+  font-size: 20px;
+  text-shadow: 0 0px 9px #0066ff, 0 0px 2px #fff; }
 
 /*# sourceMappingURL=master.css.map */
