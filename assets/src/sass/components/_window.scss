@@ -15,4 +15,8 @@ body,
 
 .game-main {
     padding: 2em 7.2em;
+
+    &-header {
+        margin-bottom: 2em;
+    }
 }

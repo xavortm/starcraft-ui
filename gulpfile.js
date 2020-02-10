@@ -15,6 +15,22 @@ let gulp = require("gulp"),
 	plumber = require("gulp-plumber"),
 	cp = require("child_process");;
 
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
+
+gulp.task('templates', function () {
+	return gulp
+		.src('*.hbs')
+		.pipe(handlebars())
+		.pipe(wrap('Handlebars.template(<%= contents %>)'))
+		.pipe(declare({
+			namespace: 'MyApp.templates',
+			noRedeclare: true, // Avoid duplicate declarations
+		}))
+		.pipe(concat('templates.js'))
+		.pipe(gulp.dest('dist/scripts/'));
+});
 
 /**
 * Unify all scripts to work with source and destination paths.
@@ -139,6 +155,7 @@ gulp.task("default",
 			"moveScripts",
 			"minifyScripts",
 			"cssmin",
+			"templates"
 		),
 		"watch"
 	)

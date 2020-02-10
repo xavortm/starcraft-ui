@@ -433,6 +433,8 @@ body,
 
 .game-main {
   padding: 2em 7.2em; }
+  .game-main-header {
+    margin-bottom: 2em; }
 
 .game-header .nav-menu {
   display: -webkit-box;
@@ -683,5 +685,132 @@ body,
   font-weight: 500;
   font-size: 20px;
   text-shadow: 0 0px 9px #0066ff, 0 0px 2px #fff; }
+
+.portrait-box-level-9, .portrait-box-level-8, .portrait-box-level-7, .portrait-box-level-6, .portrait-box-level-5, .portrait-box-level-final, .portrait-box-level-final-under {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block; }
+
+.portrait-box-level-final .top-left, .portrait-box-level-final-under .top-left, .portrait-box-level-final .top-right, .portrait-box-level-final-under .top-right, .portrait-box-level-final .bottom-left, .portrait-box-level-final-under .bottom-left, .portrait-box-level-final .bottom-right, .portrait-box-level-final-under .bottom-right {
+  -webkit-clip-path: polygon(9% 0, 91% 0, 100% 9%, 100% 91%, 91% 100%, 9% 100%, 0 91%, 0 9%);
+          clip-path: polygon(9% 0, 91% 0, 100% 9%, 100% 91%, 91% 100%, 9% 100%, 0 91%, 0 9%);
+  content: '';
+  height: 3.5em;
+  width: 3.5em;
+  display: block;
+  background: #213962;
+  position: absolute; }
+
+.portrait-box {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  padding: 3px;
+  width: 7.5em;
+  height: 10em;
+  position: relative; }
+  .portrait-box-level-9 {
+    z-index: 9;
+    background: #0e1427;
+    -webkit-clip-path: polygon(1% 0, 99% 0, 100% 0.75%, 100% 99.25%, 99.25% 100%, 1% 100%, 0 99.25%, 0 0.75%);
+            clip-path: polygon(1% 0, 99% 0, 100% 0.75%, 100% 99.25%, 99.25% 100%, 1% 100%, 0 99.25%, 0 0.75%); }
+  .portrait-box-level-8 {
+    z-index: 8;
+    background: #0e253b;
+    -webkit-clip-path: polygon(2% 0, 98% 0, 100% 1.5%, 100% 98.5%, 98.5% 100%, 2% 100%, 0 98.5%, 0 1.5%);
+            clip-path: polygon(2% 0, 98% 0, 100% 1.5%, 100% 98.5%, 98.5% 100%, 2% 100%, 0 98.5%, 0 1.5%);
+    -webkit-transform: scale(1.03, 1.0225);
+            transform: scale(1.03, 1.0225); }
+  .portrait-box-level-7 {
+    z-index: 7;
+    background: #000;
+    -webkit-clip-path: polygon(2% 0, 98% 0, 100% 1.5%, 100% 98.5%, 98.5% 100%, 2% 100%, 0 98.5%, 0 1.5%);
+            clip-path: polygon(2% 0, 98% 0, 100% 1.5%, 100% 98.5%, 98.5% 100%, 2% 100%, 0 98.5%, 0 1.5%);
+    -webkit-transform: scale(1.04, 1.03);
+            transform: scale(1.04, 1.03); }
+  .portrait-box-level-6 {
+    z-index: 6;
+    background: #346e96;
+    -webkit-clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%);
+            clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%);
+    -webkit-transform: scale(1.07, 1.0525);
+            transform: scale(1.07, 1.0525); }
+  .portrait-box-level-5 {
+    z-index: 5;
+    background: #000;
+    -webkit-clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%);
+            clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%);
+    -webkit-transform: scale(1.08, 1.06);
+            transform: scale(1.08, 1.06); }
+  .portrait-box-level-final, .portrait-box-level-final-under {
+    z-index: 4;
+    -webkit-transform: scale(1.13, 1.0975);
+            transform: scale(1.13, 1.0975); }
+    .portrait-box-level-final .top-left, .portrait-box-level-final-under .top-left {
+      left: -2px;
+      top: -2px; }
+    .portrait-box-level-final .top-right, .portrait-box-level-final-under .top-right {
+      right: -2px;
+      top: -2px; }
+    .portrait-box-level-final .bottom-left, .portrait-box-level-final-under .bottom-left {
+      left: -2px;
+      bottom: -2px; }
+    .portrait-box-level-final .bottom-right, .portrait-box-level-final-under .bottom-right {
+      right: -2px;
+      bottom: -2px; }
+    .portrait-box-level-final .base, .portrait-box-level-final-under .base {
+      background: #213962;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%);
+              clip-path: polygon(3% 0, 97% 0, 100% 2.25%, 100% 97.75%, 97.75% 100%, 3% 100%, 0 97.75%, 0 2.25%); }
+  .portrait-box-level-final-under {
+    z-index: 3;
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
+    opacity: 1;
+    -webkit-transform: scale(1.14, 1.105) translateY(1px);
+            transform: scale(1.14, 1.105) translateY(1px); }
+    .portrait-box-level-final-under .bottom-left,
+    .portrait-box-level-final-under .bottom-right,
+    .portrait-box-level-final-under .top-left,
+    .portrait-box-level-final-under .top-right,
+    .portrait-box-level-final-under .base {
+      background: black;
+      -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+              clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%); }
+  .portrait-box .portrait-image {
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border: 1px solid #0e253b;
+    background-size: cover;
+    position: relative;
+    z-index: 10; }
+  .portrait-box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .portrait-box .portrait-title {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    height: 2.4em;
+    position: relative;
+    z-index: 10; }
+    .portrait-box .portrait-title span {
+      color: #5fc8ec;
+      font-weight: bold;
+      font-size: .85em;
+      text-shadow: 1px 1px 0 #070c12;
+      -webkit-transform: translateY(-2px);
+              transform: translateY(-2px); }
 
 /*# sourceMappingURL=master.css.map */

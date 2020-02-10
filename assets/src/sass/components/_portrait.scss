@@ -1,0 +1,206 @@
+$portrait-background: #0e1427;
+$portrait-height: 10em;
+$portrait-width: 7.5em;
+
+// We need to use this to calculate the crop values below.
+$portrait-ratio: $portrait-width / $portrait-height;
+
+$backdrop-color: lighten(#1d3257, 3%);
+
+// Save some writing
+@mixin clippath($radius, $ratio) {
+    $default: $radius;
+    $default-mirror: 100% - $radius;
+    $changed: $radius * $ratio;
+    $changed-mirror: 100% - ($radius * $ratio);
+
+    @debug $ratio;
+
+    clip-path: polygon(
+        $default 0,
+        $default-mirror 0,
+
+        100% $changed,
+        100% $changed-mirror,
+
+        $changed-mirror 100%,
+        $default 100%,
+        
+        0 $changed-mirror,
+        0 $changed);
+}
+
+%level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+}
+
+%corner {
+    @include clippath(9%, 1);
+    content: '';
+    height: 3.5em;
+    width: 3.5em;
+    display: block;
+    background: $backdrop-color;
+    position: absolute;
+}
+
+.portrait-box {
+    backdrop-filter: blur(3px);
+    padding: 3px;
+    width: $portrait-width;
+    height: $portrait-height;
+    position: relative;
+
+    &-level-9 {
+        @extend %level;
+        z-index: 9;
+        background: $portrait-background;
+        @include clippath(1%, $portrait-ratio);
+    }
+
+    &-level-8 {
+        @extend %level;
+        z-index: 8;
+        background: #0e253b;
+        @include clippath(2%, $portrait-ratio);
+
+        $scaleX: 0.03;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY);
+    }
+
+    &-level-7 {
+        @extend %level;
+        z-index: 7;
+        background: #000;
+        @include clippath(2%, $portrait-ratio);
+
+        $scaleX: 0.04;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY);
+    }
+
+    &-level-6 {
+        @extend %level;
+        z-index: 6;
+        background: #346e96;
+        @include clippath(3%, $portrait-ratio);
+
+        $scaleX: 0.07;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY);
+    }
+
+    &-level-5 {
+        @extend %level;
+        z-index: 5;
+        background: #000;
+        @include clippath(3%, $portrait-ratio);
+
+        $scaleX: 0.08;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY);
+    }
+
+    &-level-final,
+    &-level-final-under {
+        @extend %level;
+        z-index: 4;
+
+        $scaleX: 0.13;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY);
+        
+        // opacity: .6;
+
+        .top-left {
+            @extend %corner;
+            left: -2px; top: -2px; 
+        }
+
+        .top-right {
+            @extend %corner;
+            right: -2px;
+            top: -2px;
+        }
+
+        .bottom-left {
+            @extend %corner;
+            left: -2px;
+            bottom: -2px;
+        }
+
+        .bottom-right {
+            @extend %corner;
+            right: -2px;
+            bottom: -2px;
+        }
+
+        .base {
+            background: $backdrop-color;
+            width: 100%;
+            height: 100%;
+            @include clippath(3%, $portrait-ratio);
+        }
+    }
+
+    &-level-final-under {
+        z-index: 3;
+        filter: blur(1px);
+        opacity: 1;
+
+        $scaleX: 0.14;
+        $scaleY: $scaleX * $portrait-ratio;
+        transform: scale(1 + $scaleX, 1 + $scaleY) translateY(1px);
+
+        .bottom-left,
+        .bottom-right,
+        .top-left,
+        .top-right,
+        .base {
+            background: black;
+            @include clippath(10%, 1);
+        }
+    }
+
+    .portrait-image {
+        // Force square proportions:
+        width: 100%;
+        padding-bottom: 100%;
+
+        overflow: hidden;
+        border: 1px solid #0e253b;
+        background-size: cover;
+        position: relative;
+        z-index: 10;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .portrait-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.4em;
+        position: relative;
+        z-index: 10;
+
+        span {
+            color: #5fc8ec;
+            font-weight: bold;
+            font-size: .85em;
+            text-shadow: 1px 1px 0 #070c12;
+            transform: translateY(-2px);
+        }
+    }
+}
