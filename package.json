@@ -54,6 +54,6 @@
     "browser-sync": "^2.26.7",
     "browsersync": "0.0.1-security",
     "gulp-filter": "^5.1.0",
-    "npm": "^6.5.0"
+    "npm": "^6.14.6"
   }
 }
