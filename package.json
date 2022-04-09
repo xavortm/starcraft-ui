@@ -30,7 +30,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-wrap": "^0.15.0",
-    "moment": "^2.23.0",
+    "moment": "^2.29.2",
     "replace-in-file": "^3.4.2",
     "sass-lint": "^1.12.1"
   },
